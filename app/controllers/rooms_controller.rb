@@ -6,10 +6,13 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @stations = @room.stations
   end
 
   def new
     @room = Room.new
+    2.times{@room.stations.build}
+     
   end
 
   def edit
@@ -56,6 +59,7 @@ class RoomsController < ApplicationController
     end
 
     def room_params
-      params.require(:room).permit(:name, :rent, :address, :age, :content)
+      params.require(:room).permit(:name, :rent, :address, :age, :content, 
+                                   stations_attributes:[:line, :minute, :name, :id, :room_id, :_destroy])
     end
 end

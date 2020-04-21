@@ -4,6 +4,7 @@ class CreateStations < ActiveRecord::Migration[5.2]
       t.string :line
       t.string :name
       t.string :minute
+      t.references :room, foreign_key: true
 
       t.timestamps
     end

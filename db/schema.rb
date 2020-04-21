@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2020_04_20_025758) do
     t.string "line"
     t.string "name"
     t.string "minute"
+    t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_stations_on_room_id"
   end
 
 end
