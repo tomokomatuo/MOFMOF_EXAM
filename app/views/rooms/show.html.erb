@@ -26,10 +26,12 @@
 </p>
 
 <hr>
-
+<% n = 0 %>
 <% @stations.each do |station| %>
+<h3>
+<%= "最寄り駅#{n += 1}" %>
+</h3>
 
-<h3>最寄り駅1</h3>
 
 <p>
   <strong>路線名</strong>

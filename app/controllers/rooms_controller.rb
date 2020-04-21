@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @room.stations.build
   end
 
   def create

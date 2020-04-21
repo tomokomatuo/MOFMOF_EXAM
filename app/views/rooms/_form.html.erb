@@ -37,10 +37,13 @@
   </div>
 
   <hr>
+
   
+  <% n = 0 %>
   <%= form.fields_for :stations do |s| %>
-  
-  <h2>最寄り駅1</h2>
+  <h3>
+  <%= "最寄り駅 #{n += 1}" %>
+  </h3>
   
   <div class="field">
     <%= s.label "路線名" %>
@@ -56,10 +59,11 @@
     <%= s.label "徒歩分数" %>
     <%= s.text_field :minute %>
   </div>
-  
   <% end %>
   
-  <% if request.path_info = new_room_path %>
+ 
+  
+  <% if action_name == "new" %>
   <div class="actions">
     <%= form.submit "登録する" %>
   </div>
